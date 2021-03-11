@@ -14,7 +14,7 @@ pipeline {
         }
 	    stage("Build DB"){
 		    steps{
-		    		dotnet build "db/Workouter-SSDT/Workouter-SSDT.sqlproj" /p:NetCoreBuild=true /p:NETCoreTargetsPath=":NETCoreTargetsPath="/.azuredatastudio/extensions/microsoft.sql-database-projects-0.6.1/BuildDirectory"
+		    		sh "dotnet build "db/Workouter-SSDT/Workouter-SSDT.sqlproj" /p:NetCoreBuild=true /p:NETCoreTargetsPath=":NETCoreTargetsPath="/.azuredatastudio/extensions/microsoft.sql-database-projects-0.6.1/BuildDirectory""
 		    }
 	    } 
         stage("Release to staging") {
