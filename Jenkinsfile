@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Build application") {
             steps {
-                sh "dotnet build src/Workouter.sln"
+                sh "dotnet build src/Workouter-ssdt.sln"
                 sh "docker build . -t lechampdk/workouter"
                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: '69e5c2f8-8f3b-4461-b829-e3532bc4b156', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']])
 				{
