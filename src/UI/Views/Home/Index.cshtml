@@ -1,0 +1,38 @@
+﻿@model IndexViewModel 
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form method="post" action="@Url.Action("Save")">
+    <label>Distance</label>
+    <input type="number" name="distance" />
+
+    <label>Workout type</label>
+    <select name="type">
+        @foreach(var type in Model.WorkoutTypes)
+        {
+            <option value="@type.Id">@type.Name</option>
+        }
+    </select>
+
+    <button class="btn btn-primary" type="submit">Save workout</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Distance</td>
+            <td>Type</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var workout in Model.Workouts)
+        {
+            <tr>
+                <td>@workout.Id</td>
+                <td>@workout.Distance</td>
+                <td>@workout.WorkoutType</td>
+            </tr>
+        }
+    </tbody>
+</table>
