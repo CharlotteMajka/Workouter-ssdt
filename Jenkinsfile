@@ -21,6 +21,7 @@ pipeline {
             steps {
                 sh "docker-compose pull"
                 sh "docker-compose up -d application mssql-db"
+		sh "sqlpackage /SourceFile:db/Workouter-SSDT/bin/Debug/Workouter-SSDT.dacpac /TargetPassword:HelloW0rld /TargetUser:sa /TargetServerName:devops.setgo.dk,22000"    
             }
         }
     }
