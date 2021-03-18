@@ -67,6 +67,5 @@
   <ItemGroup>
     <Build Include="Workouts.sql" />
     <Build Include="WorkoutTypes.sql" />
-    <Build Include="insert.sql" />
   </ItemGroup>
 </Project>
